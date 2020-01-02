@@ -1,5 +1,5 @@
 // @ts-check
-const CONNECTSTRING = "postgres://bib:123@localhost/bib";
+const CONNECTSTRING = "postgres://bank:222@localhost/bank";
 const PORT = 3000;
 const express = require("express");
 const pgp = require("pg-promise")();

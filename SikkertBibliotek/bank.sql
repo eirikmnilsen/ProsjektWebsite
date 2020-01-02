@@ -26,15 +26,14 @@ CREATE TABLE konto (
   kontoid serial primary key,
   balance text,
   kundeid int references kunde (kundeid)
-
 );
 
 CREATE TABLE laan (
   laanid serial primary key,
   udato date,
   nedbetalt text default 'false' check (
-    innlevert = 'true'
-    or innlevert = 'false'
+    nedbetalt = 'true'
+    or nedbetalt = 'false'
   ),
   kundeid int references kunde (kundeid)
 );
