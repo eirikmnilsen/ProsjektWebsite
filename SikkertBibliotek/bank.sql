@@ -8,7 +8,7 @@ CREATE TABLE kunde (
   epost text,
   tlf text,
   fdato date,
-  kjonn text
+  kjonn text,
   bankansattid int references bankansatt (bankansattid)
 );
 
@@ -26,8 +26,7 @@ CREATE TABLE konto (
   kontoid serial primary key,
   balance text,
   kundeid int references kunde (kundeid)
-
-)
+);
 
 CREATE TABLE laan (
   laanid serial primary key,
@@ -36,5 +35,5 @@ CREATE TABLE laan (
     nedbetalt = 'true'
     or nedbetalt = 'false'
   ),
-  kundeid int references kunde (kundeid),
+  kundeid int references kunde (kundeid)
 );
