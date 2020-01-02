@@ -1,5 +1,5 @@
 // @ts-check
-const CONNECTSTRING = "postgres://bib:123@localhost/bib";
+const CONNECTSTRING = "postgres://bank:222@localhost/bank";
 const PORT = 3000;
 const express = require("express");
 const pgp = require("pg-promise")();
@@ -16,7 +16,7 @@ const crypto = require("crypto");
 
 // fake userdb just for testing - should be stored in db
 const userlist = {
-  1: { id: 1, username: "admin", password: umd5("1230") },
+  1: { id: 1, username: "sigurd", password: umd5("1237") },
   2: { id: 2, username: "bib1", password: umd5("1234") },
   3: { id: 3, username: "bib2", password: umd5("1235") },
   4: { id: 4, username: "eirik", password: umd5("12345")}
