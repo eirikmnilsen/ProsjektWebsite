@@ -16,7 +16,7 @@
 
 <body>
 
-    <home-bar heading="Skolebibliotek Skeisvang" crumb="forfatter" getlinks="/htmlfiler/admin" username="/myself">
+    <home-bar heading="Skolebibliotek Skeisvang" crumb="bankansatt" getlinks="/htmlfiler/admin" username="/myself">
     </home-bar>
 
 
@@ -24,13 +24,13 @@
 
 
         <div class="table">
-            <db-table id="table" update="forfatter" delete="forfatter" fields="forfatterid:hidden,fornavn,etternavn" sql="select * from forfatter">
-                <span slot="caption">Forfattere</span>
+            <db-table id="table" update="bankansatt" delete="bankansatt" fields="bankansattid:hidden,fornavn,etternavn" sql="select * from bankansatt">
+                <span slot="caption">Ansatt i vår bank</span>
             </db-table>
         </div>
 
-        <db-insert id="form" fields="fornavn,etternavn" table="forfatter">
-            <span slot="heading">Registrer Forfatter</span>
+        <db-insert id="form" fields="fornavn,etternavn" table="bankansatt">
+            <span slot="heading">Registrer Bankansatt</span>
         </db-insert>
 
     </div>

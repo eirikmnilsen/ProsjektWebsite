@@ -130,14 +130,14 @@ app.post("/runsql", function(req, res) {
       safesql(user, res, data);
     }
   } else {
-    saferSQL(res, data, { tables: "bok,forfatter,eksemplar" });
+    saferSQL(res, data, { tables: "laan,bankansatt,konto" });
   }
 });
 
 async function saferSQL(res, obj, options) {
   const predefined = [
-    "select * from bok b join forfatter f on (b.forfatterid = f.forfatterid)",
-    "select e.*, b.tittel from eksemplar e join bok b on (e.bokid = b.bokid)"
+    "select * from konto k join bankansatt b on (k.bankansattid = b.bankansattid)",
+    "select e.*, k.balance from kunde u join konto k on (u.kontoid = k.kontoid)"
   ]
   let results = { error:"Illegal sql" };
   let tables = options.tables.split(",");
