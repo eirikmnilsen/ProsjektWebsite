@@ -16,7 +16,7 @@
 
 <body>
     <!-- denne varianten henter menyene fra /htmlfiler (som er definert i app.js)    -->
-    <home-bar heading="Skolebibliotek Skeisvang" crumb="utlån" getlinks="/htmlfiler/admin" username="/myself">
+    <home-bar heading="Skolebibliotek Skeisvang" crumb="laan" getlinks="/htmlfiler/admin" username="/myself">
     </home-bar>
     <!--
     <home-bar heading=" Skolebibliotek Skeisvang" crumb="forfatter">
@@ -31,10 +31,10 @@
     <div id="admin">
         <!-- angi feltnavn du ønsker å bruke i fields="" -->
         <div class="table">
-            <db-table id="table" update="utlaan" delete="utlaan" fields="utlaanid,fornavn,etternavn,tittle,innlevert" 
-            sql="select u.utlaanid,l.fornavn,l.etternavn,b.tittle,e.tilstand,u.innlevert 
-             from laaner l inner join utlaan u on (l.laanerid = u.laanerid) 
-             inner join eksemplar e on (e.eksemplarid = u.eksemplarid) inner join bok b on (b.bokid=e.bokid)">
+            <db-table id="table" update="laan" delete="laan" fields="laanid,fornavn,etternavn,udato,nedbetalt" 
+            sql="select l.laanid,k.fornavn,k.etternavn,l.udato,l.nedbetalt 
+             from kunde u inner join laan l on (k.kundeid = l.kundeid) 
+             inner join bok b on (b.bokid=e.bokid)">
                 <span slot="caption">Utlån</span>
             </db-table>
         </div>

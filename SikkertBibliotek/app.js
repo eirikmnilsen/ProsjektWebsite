@@ -137,7 +137,7 @@ app.post("/runsql", function(req, res) {
 async function saferSQL(res, obj, options) {
   const predefined = [
     "select * from konto k join bankansatt b on (k.bankansattid = b.bankansattid)",
-    "select e.*, k.balance from kunde u join konto k on (u.kontoid = k.kontoid)"
+    "select u.*, k.balance from kunde u join konto k on (u.kontoid = k.kontoid)"
   ]
   let results = { error:"Illegal sql" };
   let tables = options.tables.split(",");
@@ -203,8 +203,8 @@ async function safesql(user, res, obj) {
   // liste over begrensa sql for vanlig bruker - må gjelde egne utlån
   if (user && user.id) {
     let good = [
-      `select * from utlaan where laanerid=${user.id}`,
-      `select * from laaner where laanerid=${user.id}`
+      `select * from laan where kundeid=${user.id}`,
+      `select * from kunde where kundeid=${user.id}`
     ];
     if (good.includes(lowsql)) {
       personal = true;

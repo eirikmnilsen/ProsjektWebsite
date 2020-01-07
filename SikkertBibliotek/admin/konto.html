@@ -14,13 +14,13 @@
 </head>
 
 <body>
-    <home-bar heading="Skolebibliotek Skeisvang" crumb="bok" getlinks="/htmlfiler/public">
+    <home-bar heading="Skolebibliotek Skeisvang" crumb="konto" getlinks="/htmlfiler/public">
     </home-bar>
 
     <div id="main">
-        <db-table id="table" fields="tittel,fornavn,etternavn,antallsider"
-            sql="select * from bok b inner join forfatter f on (b.forfatterid = f.forfatterid)">
-            <span slot="caption">Laan</span>
+        <db-table id="table" fields="balance"
+            sql="select * from konto k inner join bankansatt b on (k.bankansattid = b.bankansattid)">
+            <span slot="caption">Konto</span>
         </db-table>
     </div>
 
