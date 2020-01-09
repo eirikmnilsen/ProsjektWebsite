@@ -1,5 +1,13 @@
 -- drop table bok,laaner,forfatter,eksemplar,utlaan cascade;
 
+
+create table users (
+    userid SERIAL PRIMARY KEY not null,
+    username text unique not null,
+    role text default 'user',
+    password text not null
+); 
+
 CREATE TABLE kunde (
   kundeid serial primary key,
   fornavn text not null,
