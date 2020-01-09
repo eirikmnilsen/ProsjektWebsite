@@ -17,13 +17,13 @@
 
 <body>
 
-    <home-bar heading="Nettbutikk" crumb="laan" getlinks="/htmlfiler/admin" username="/myself"">
+    <home-bar heading="Nettbutikk" crumb="laan" getlinks="/htmlfiler/admin" username="/myself">
     </home-bar>
     
     <h1 class=" centered">Mine laan</h1>
         <div id="admin">
 
-            <db-insert id="form" fields="dato:date" table="bestilling">
+            <db-insert id="form" fields="dato:date" table="laan">
                 <span slot="heading">Laan penger</span>
                 <db-user id="kundeid" field="kundeid" label="Kundenr"></db-user>
             </db-insert>
