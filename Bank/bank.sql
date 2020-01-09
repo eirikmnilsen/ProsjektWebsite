@@ -9,7 +9,8 @@ CREATE TABLE kunde (
   tlf text,
   fdato date,
   kjonn text,
-  bankansattid int references bankansatt (bankansattid)
+  bankansattid int references bankansatt (bankansattid),
+  userid int unique not null
 );
 
 CREATE TABLE bankansatt (
@@ -37,3 +38,10 @@ CREATE TABLE laan (
   ),
   kundeid int references kunde (kundeid)
 );
+
+create table users (
+    userid SERIAL PRIMARY KEY not null,
+    username text unique not null,
+    role text default 'user',
+    password text not null
+); 
