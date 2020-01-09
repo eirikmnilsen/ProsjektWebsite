@@ -14,7 +14,6 @@ DROP TABLE IF EXISTS bankansatt cascade;
 DROP TABLE IF EXISTS laan cascade;
 
  
-
 create table users (
     userid SERIAL PRIMARY KEY not null,
     username text unique not null,
