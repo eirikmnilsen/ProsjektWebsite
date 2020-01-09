@@ -17,36 +17,36 @@
 
 <body>
 
-    <home-bar heading="Nettbutikk" crumb="bestilling" getlinks="/htmlfiler/admin" username="/myself"">
+    <home-bar heading="Nettbutikk" crumb="laan" getlinks="/htmlfiler/admin" username="/myself"">
     </home-bar>
     
-    <h1 class=" centered">Mine Bestillinger</h1>
+    <h1 class=" centered">Mine laan</h1>
         <div id="admin">
 
             <db-insert id="form" fields="dato:date" table="bestilling">
-                <span slot="heading">Bestilling Vare</span>
+                <span slot="heading">Laan penger</span>
                 <db-user id="kundeid" field="kundeid" label="Kundenr"></db-user>
             </db-insert>
            
 
             <div class="table">
-                <db-table connected="kundeid:kundeid" id="bestilling" update="bestilling" key="bestillingid"
-                    fields="bestillingid:number,dato:date" delete="bestilling" sql="select * from bestilling">
-                    <span slot="caption">Mine bestillinger</span>
+                <db-table connected="kundeid:kundeid" id="laan" update="laan" key="laanid"
+                    fields="laanid:number,dato:date" delete="laan" sql="select * from laan">
+                    <span slot="caption">Mine laan</span>
                 </db-table>
 
                 <db-insert id="linje" fields="antall" foreign="vare.vareid:navn+pris"
-                    connected="bestilling:bestillingid" table="linje">
-                    <span slot="heading">Bestilling Vare</span>
+                    connected="laan:laanid" table="linje">
+                    <span slot="heading">Laan penger</span>
                 </db-insert>
 
-                <db-table connected="bestilling:bestillingid" fields="linjeid:hidden,navn,antall:int,pris:money"
+                <db-table connected="laan:laanid" fields="linjeid:hidden,navn,antall:int,pris:money"
                     update="linje" delete="linje"
                     sql="select l.*,v.navn,v.pris from linje l inner join vare v on (v.vareid = l.vareid)">
                     <span slot="caption">Varelinje</span>
                 </db-table>
 
-                <db-table id="total" connected="bestilling:bestillingid" fields="total:money" update="linje" sql="select sum(l.antall * v.pris) as total
+                <db-table id="total" connected="laan:laanid" fields="total:money" update="linje" sql="select sum(l.antall * v.pris) as total
                                 from linje l inner join vare v on (v.vareid = l.vareid)">
                     <span slot="caption">Totalsum</span>
                 </db-table>
