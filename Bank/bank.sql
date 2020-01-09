@@ -1,5 +1,17 @@
--- drop table bok,laaner,forfatter,eksemplar,utlaan cascade;
 
+create role bank password '123';
+alter role bank with login;
+create database bank owner bank;
+
+\c bank;
+
+
+
+drop table if exists users cascade;
+drop table if exists kunde cascade;
+drop table if exists konto cascade;
+drop table if exists bankansatt cascade;
+drop table if exists laan cascade;
 
 
 create role bank password '123';   
@@ -55,6 +67,7 @@ CREATE TABLE konto (
 CREATE TABLE laan (
   laanid serial primary key,
   udato date,
+  antall text,
   nedbetalt text default 'false' check (
     nedbetalt = 'true'
     or nedbetalt = 'false'
@@ -62,7 +75,8 @@ CREATE TABLE laan (
   kundeid int references kunde (kundeid)
 );
 
+alter table users owner to bank;
+alter table konto owner to bank;
+alter table kunde owner to bank;
 alter table laan owner to bank;
 alter table bankansatt owner to bank;
-alter table kunde owner to bank;
-alter table konto owner to bank;
