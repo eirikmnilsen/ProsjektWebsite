@@ -14,17 +14,17 @@
 </head>
 
 <body>
-    <home-bar heading="Nettbutikk" crumb="vare" getlinks="/htmlfiler/admin" username="/myself">
+    <home-bar heading="Nettbutikk" crumb="bankansatt" getlinks="/htmlfiler/admin" username="/myself">
     </home-bar>
     <div id="admin">
         <div class="table">
-            <db-table id="table" update="vare"  fields="vareid:hidden,navn,pris:number" delete="vare"
-                sql="select * from vare">
-                <span slot="caption">varer</span>
+            <db-table id="table" update="bankansatt"  fields="fornavn,etternavn,kjonn" delete="bankansatt"
+                sql="select * from bankansatt">
+                <span slot="caption">bankansatt</span>
             </db-table>
         </div>
-        <db-insert id="form" fields="navn,pris:number"  table="vare">
-            <span slot="heading">Registrer Vare</span>
+        <db-insert id="form" fields="fornavn,etternavn,kjonn"  table="bankansatt">
+            <span slot="heading">Registrer Bankansatt</span>
         </db-insert>
     </div>
 </body>
