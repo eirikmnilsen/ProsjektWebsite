@@ -54,6 +54,7 @@ CREATE TABLE konto (
 CREATE TABLE laan (
   laanid serial primary key,
   udato date,
+  antall text,
   nedbetalt text default 'false' check (
     nedbetalt = 'true'
     or nedbetalt = 'false'

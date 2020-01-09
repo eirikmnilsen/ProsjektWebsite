@@ -35,7 +35,7 @@
                     <span slot="caption">Mine laan</span>
                 </db-table>
 
-                <db-insert id="linje" fields="antall" foreign="vare.vareid:navn+pris"
+                <db-insert id="linje" fields="antall" foreign="laan.laanid:navn+pris"
                     connected="laan:laanid" table="linje">
                     <span slot="heading">Laan penger</span>
                 </db-insert>

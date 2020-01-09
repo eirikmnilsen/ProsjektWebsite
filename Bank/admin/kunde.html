@@ -7,9 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Registrer Eksemplar</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="/components/DbTable.js"></script>
     <script src="/components/DbList.js"></script>
     <script src="/components/Homebar.js"></script>
-    <link rel="stylesheet" href="/css/shop.css">
+    <link rel="stylesheet" href="/css/admin.css">
 </head>
 
 <body>
@@ -17,21 +18,13 @@
     <home-bar heading="Kunder" crumb="kunde" getlinks="/htmlfiler/public">
     </home-bar>
 
-    <div id="main">
-
-        <ol>
-            <db-list  cssimport="/css/components.css" service="/runsql" sql="select * from kunde">
-
-                <li>
-                    <div>
-                        <div>${fornavn}</div>
-                        <div>${etternavn}</div>
-                    </div>
-                </li>
-
-            </db-list>
-        </ol>
-
+    <div id="admin">
+        <div class="table">
+            <db-table id="table" update="kunde"  fields="fornavn,etternavn" delete="kunde"
+                sql="select * from kunde">
+                <span slot="caption">Kunde</span>
+            </db-table>
+        </div>
     </div>
 
 </body>
