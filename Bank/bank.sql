@@ -1,5 +1,17 @@
--- drop table bok,laaner,forfatter,eksemplar,utlaan cascade;
 
+create role bank password '123';
+alter role bank with login;
+create database bank owner bank;
+
+\c bank;
+
+
+
+drop table if exists users cascade;
+drop table if exists kunde cascade;
+drop table if exists konto cascade;
+drop table if exists bankansatt cascade;
+drop table if exists laan cascade;
 
 create table users (
     userid SERIAL PRIMARY KEY not null,
@@ -7,6 +19,16 @@ create table users (
     role text default 'user',
     password text not null
 ); 
+
+CREATE TABLE bankansatt (
+  bankansattid serial primary key,
+  fornavn text not null,
+  etternavn text not null,
+  kjonn text check (
+    kjonn = 'm'
+    or kjonn = 'f'
+  )
+);
 
 CREATE TABLE kunde (
   kundeid serial primary key,
@@ -21,15 +43,7 @@ CREATE TABLE kunde (
   userid int unique not null
 );
 
-CREATE TABLE bankansatt (
-  bankansattid serial primary key,
-  fornavn text not null,
-  etternavn text not null,
-  kjonn text check (
-    kjonn = 'm'
-    or kjonn = 'f'
-  )
-);
+
 
 CREATE TABLE konto (
   kontoid serial primary key,
@@ -46,3 +60,9 @@ CREATE TABLE laan (
   ),
   kundeid int references kunde (kundeid)
 );
+
+alter table users owner to bank;
+alter table konto owner to bank;
+alter table kunde owner to bank;
+alter table laan owner to bank;
+alter table bankansatt owner to bank;
