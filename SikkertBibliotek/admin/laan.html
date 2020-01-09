@@ -33,8 +33,7 @@
         <div class="table">
             <db-table id="table" update="laan" delete="laan" fields="laanid,fornavn,etternavn,udato,nedbetalt" 
             sql="select l.laanid,k.fornavn,k.etternavn,l.udato,l.nedbetalt 
-             from kunde u inner join laan l on (k.kundeid = l.kundeid) 
-             inner join bok b on (b.bokid=e.bokid)">
+             from kunde u inner join laan l on (k.kundeid = l.kundeid)">
                 <span slot="caption">Utlån</span>
             </db-table>
         </div>
