@@ -13,18 +13,6 @@ drop table if exists konto cascade;
 drop table if exists bankansatt cascade;
 drop table if exists laan cascade;
 
-
-create role bank password '123';   
-alter role bank with login;         
-create database bank owner bank;     
-
-\c bank;
-
-DROP TABLE IF EXISTS users cascade;
-DROP TABLE IF EXISTS kunde cascade;
-DROP TABLE IF EXISTS bankansatt cascade;
-DROP TABLE IF EXISTS laan cascade;
-
  
 create table users (
     userid SERIAL PRIMARY KEY not null,
@@ -37,6 +25,7 @@ CREATE TABLE bankansatt (
   bankansattid serial primary key,
   fornavn text not null,
   etternavn text not null,
+  ansiennitet int default 1,
   kjonn text check (
     kjonn = 'm'
     or kjonn = 'f'

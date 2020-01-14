@@ -24,12 +24,12 @@
 
 
         <div class="table">
-            <db-table id="table" update="bankansatt" delete="bankansatt" fields="bankansattid:hidden,fornavn,etternavn" sql="select * from bankansatt">
+            <db-table id="table" update="bankansatt" delete="bankansatt" fields="bankansattid:hidden,fornavn,etternavn,ansiennitet" sql="select * from bankansatt">
                 <span slot="caption">Ansatt i vår bank</span>
             </db-table>
         </div>
 
-        <db-insert id="form" fields="fornavn,etternavn" table="bankansatt">
+        <db-insert id="form" fields="fornavn,etternavn,ansiennitet" table="bankansatt">
             <span slot="heading">Registrer Bankansatt</span>
         </db-insert>
 

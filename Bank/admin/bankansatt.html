@@ -18,12 +18,12 @@
     </home-bar>
     <div id="admin">
         <div class="table">
-            <db-table id="table" update="bankansatt"  fields="fornavn,etternavn" delete="bankansatt"
+            <db-table id="table" update="bankansatt"  fields="fornavn,etternavn,ansiennitet" delete="bankansatt"
                 sql="select * from bankansatt">
                 <span slot="caption">bankansatt</span>
             </db-table>
         </div>
-        <db-insert id="form" fields="fornavn,etternavn"  table="bankansatt">
+        <db-insert id="form" fields="fornavn,etternavn,ansiennitet"  table="bankansatt">
             <span slot="heading">Registrer Bankansatt</span>
         </db-insert>
     </div>
