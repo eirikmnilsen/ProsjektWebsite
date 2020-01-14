@@ -30,9 +30,11 @@ class HomeBar extends HTMLElement {
                 align-items: center;
                 grid-template-columns: 1fr 1fr 2fr 3fr 1fr;
                 height: 70px;
-                background-color: rgba(32,166,231,.8);
-                background-image: var(--grad, linear-gradient(180deg,#20a8e9,rgba(30,158,220,.5)) );
+                background-color: gray;
+                background-image: var(--grad, linear-gradient(300deg,gray,black) );
                 color: #fff;
+                font-family: sans-serif;
+                margin: -8px;
             }
 
             div#menu {
@@ -42,7 +44,7 @@ class HomeBar extends HTMLElement {
 
             div#menu ul,
             div#info > ul {
-              text-align: left;
+              text-align: center;
               text-transform: capitalize;
               visibility: hidden;
               list-style: none;

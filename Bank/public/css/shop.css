@@ -3,6 +3,8 @@
   å manipulere databasen
 **/
 
+
+
 :root {
   --light-grad: linear-gradient(
     125deg,
@@ -60,6 +62,42 @@ db-table {
 }
 
 .centered {
+  position: absolute;
+  left: 460px;
+  top: 100px;
+  text-align: center;
+  font-family: sans-serif;
+
+}
+
+#index {
+  position: absolute;
+  width: 70vw;
+  height: 500px;
+  top: 200px;
+}
+
+#velkommen {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  margin-left: -8px;
+  background-image: url("../../Bilder/Smiling-employe.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+#velkommen-text {
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  top: 200px;
+  left: 200px;
+  background-color: rgb(207, 207, 207);
+  border: solid black 1px;
+  border-radius: 5%;
+  padding: 10px;
+  font-family: sans-serif;
   text-align: center;
 }
 
@@ -112,40 +150,5 @@ main {
   }
 }
 
-main > article {
-  margin: 1em;
-  background-color: rgba(245, 245, 220, 0.351);
-  padding: 10px;
-  border-radius: 12px;
-  box-shadow: rgba(0, 0, 0, 0.308) 3px 2px 2px;
-}
-
-#left {
-  grid-area: left;
-}
-
-#right {
-  grid-area: right;
-}
-
-#center {
-  grid-area: center;
-}
-
-#left p:first-letter {
-  font-size: 2em;
-}
 
 
-#top,
-#bot {
-  text-align: center;
-  color: rgb(17, 17, 141);
-}
-#top {
-  grid-area: top;
-}
-
-#bot {
-  grid-area: bot;
-}
