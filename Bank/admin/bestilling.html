@@ -24,6 +24,7 @@
         <div id="logo"></div>
         <div id="admin">
 
+<<<<<<< HEAD
            
                 <db-insert id="laan" 
                      table="laan"
@@ -34,6 +35,35 @@
                 </db-insert>
 
                
+=======
+            <db-insert id="form" fields="udato:date,antall" table="laan">
+                <span slot="heading">Lån penger</span>
+                <db-user id="kundeid" field="kundeid" label="Kundenr"></db-user>
+            </db-insert>
+           
+
+            <div class="table">
+                <db-table connected="kundeid:kundeid" id="laan" update="laan" key="laanid"
+                    fields="laanid:number,udato:date,antall" delete="laan" sql="select * from laan">
+                    <span slot="caption">Mine laan</span>
+                </db-table>
+
+                <db-table connected="laan:laanid" fields="linjeid:hidden,navn,antall:int,pris:money"
+                    update="linje" delete="linje"
+                    sql="select l.*,v.navn,v.pris from linje l inner join vare v on (v.vareid = l.vareid)">
+                    <span slot="caption">Varelinje</span>
+                </db-table>
+
+                <db-table id="total" connected="laan:laanid" fields="total:money" update="linje" sql="select sum(l.antall * v.pris) as total
+                                from linje l inner join vare v on (v.vareid = l.vareid)">
+                    <span slot="caption">Totalsum</span>
+                </db-table>
+
+                <db-list cssimport="/css/admin.css" sql="select sum(l.antall * v.pris) as total
+                from linje l inner join vare v on (v.vareid = l.vareid)">
+                    <div class="total">Totalsummen blir ${total} kr</div>
+                </db-list>
+>>>>>>> 9e46e8601e6315e9f645a6aede9d4d18f1918396
 
             </div>
 

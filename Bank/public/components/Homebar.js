@@ -35,6 +35,7 @@ class HomeBar extends HTMLElement {
                 color: #fff;
                 font-family: sans-serif;
                 margin: -8px;
+                
             }
 
             div#menu {
