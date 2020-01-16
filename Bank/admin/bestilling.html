@@ -24,38 +24,16 @@
         <div id="logo"></div>
         <div id="admin">
 
-            <db-insert id="form" fields="udato:date" table="laan">
-                <span slot="heading">Laan penger</span>
-                <db-user id="kundeid" field="kundeid" label="Kundenr"></db-user>
-            </db-insert>
            
-
-            <div class="table">
-                <db-table connected="kundeid:kundeid" id="laan" update="laan" key="laanid"
-                    fields="laanid:number,dato:date" delete="laan" sql="select * from laan">
-                    <span slot="caption">Mine laan</span>
-                </db-table>
-
-                <db-insert id="linje" fields="antall" foreign="laan.laanid:navn+pris"
-                    connected="laan:laanid" table="linje">
+                <db-insert id="laan" 
+                     table="laan"
+                     fields="antall" foreign="kunde.kundeid:fornavn+etternavn"
+                     
+                     >
                     <span slot="heading">Laan penger</span>
                 </db-insert>
 
-                <db-table connected="laan:laanid" fields="linjeid:hidden,navn,antall:int,pris:money"
-                    update="linje" delete="linje"
-                    sql="select l.*,v.navn,v.pris from linje l inner join vare v on (v.vareid = l.vareid)">
-                    <span slot="caption">Varelinje</span>
-                </db-table>
-
-                <db-table id="total" connected="laan:laanid" fields="total:money" update="linje" sql="select sum(l.antall * v.pris) as total
-                                from linje l inner join vare v on (v.vareid = l.vareid)">
-                    <span slot="caption">Totalsum</span>
-                </db-table>
-
-                <db-list cssimport="/css/admin.css" sql="select sum(l.antall * v.pris) as total
-                from linje l inner join vare v on (v.vareid = l.vareid)">
-                    <div class="total">Totalsummen blir ${total} kr</div>
-                </db-list>
+               
 
             </div>
 
