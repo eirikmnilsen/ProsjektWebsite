@@ -50,12 +50,11 @@ db-table {
 
 #login {
   border: solid gray 1px;
-  background-color: lightskyblue;
+  background-color: rgb(170, 170, 170, 0.8);
   position: absolute;
   min-width: 22em;
   min-height: 8em;
   padding: 2em;
-  border-radius: 12px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -68,6 +67,18 @@ db-table {
   text-align: center;
   font-family: sans-serif;
 
+}
+
+#wallpaper {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  margin-left: -8px;
+  margin-top: 8px;
+  background-image: url("../Bilder/Bank-Wallpaper.jpeg");
+  background-position: center;
+  background-size: cover;
+  z-index: 0;
 }
 
 #logohomebar {

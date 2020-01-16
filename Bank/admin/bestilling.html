@@ -24,22 +24,17 @@
         <div id="logo"></div>
         <div id="admin">
 
-            <db-insert id="form" fields="udato:date" table="laan">
-                <span slot="heading">Laan penger</span>
+            <db-insert id="form" fields="udato:date,antall" table="laan">
+                <span slot="heading">Lån penger</span>
                 <db-user id="kundeid" field="kundeid" label="Kundenr"></db-user>
             </db-insert>
            
 
             <div class="table">
                 <db-table connected="kundeid:kundeid" id="laan" update="laan" key="laanid"
-                    fields="laanid:number,dato:date" delete="laan" sql="select * from laan">
+                    fields="laanid:number,udato:date,antall" delete="laan" sql="select * from laan">
                     <span slot="caption">Mine laan</span>
                 </db-table>
-
-                <db-insert id="linje" fields="antall" foreign="laan.laanid:navn+pris"
-                    connected="laan:laanid" table="linje">
-                    <span slot="heading">Laan penger</span>
-                </db-insert>
 
                 <db-table connected="laan:laanid" fields="linjeid:hidden,navn,antall:int,pris:money"
                     update="linje" delete="linje"
