@@ -13,6 +13,7 @@
         }
         form {
             position: relative;
+            top: 30px;
             width: 35em;
             max-width: 85%;
             padding: 5px;
