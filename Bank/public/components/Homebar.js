@@ -87,9 +87,10 @@ class HomeBar extends HTMLElement {
                 white-space: nowrap;
             }
             div#heading {
-                font-size: 1.5em;
+                font-size: 1.3em;
                 white-space: nowrap;
                 margin-left: 2em;
+
             }
             #home i.material-icons {
               font-size: 32px;
