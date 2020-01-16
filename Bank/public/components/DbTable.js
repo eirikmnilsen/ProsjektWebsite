@@ -22,7 +22,7 @@
               background-color: var(--alternate, lightsteelblue);
             }
             caption {
-              color:blue;
+              color:black;
               font-size: 1.1em;
             }
             td.text {

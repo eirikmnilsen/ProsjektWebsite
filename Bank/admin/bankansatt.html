@@ -19,7 +19,7 @@
     </home-bar>
     <div id="admin">
         <div class="table">
-            <db-table id="table" update="bankansatt"  fields="fornavn,etternavn,ansiennitet" delete="bankansatt"
+            <db-table id="table" update="bankansatt"  fields="bankansattid:hidden,fornavn,etternavn,ansiennitet" delete="bankansatt"
                 sql="select * from bankansatt">
                 <span slot="caption">bankansatt</span>
             </db-table>
