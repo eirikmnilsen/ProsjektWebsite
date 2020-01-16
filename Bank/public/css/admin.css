@@ -18,6 +18,18 @@
       ". editor  view ."
       ".   .     view .";
   }
+
+  #logo {
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    top: 100px;
+    right: 350px;
+    background-image: url("../Bilder/KBAS-LOGO.png");
+    background-size: cover;
+    background-position: center;
+    z-index: 5;
+  }
   
   #admin > * {
       justify-self: center;

@@ -70,6 +70,18 @@ db-table {
 
 }
 
+#logo {
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  top: 100px;
+  right: 350px;
+  background-image: url("../Bilder/KBAS-LOGO.png");
+  background-size: cover;
+  background-position: center;
+  z-index: 5;
+}
+
 #index {
   position: absolute;
   width: 70vw;
@@ -85,6 +97,7 @@ db-table {
   background-image: url("../../Bilder/Smiling-employe.jpg");
   background-position: center;
   background-size: cover;
+  
 }
 
 #velkommen-text {
@@ -93,13 +106,42 @@ db-table {
   width: 200px;
   top: 200px;
   left: 200px;
-  background-color: rgb(207, 207, 207);
-  border: solid black 1px;
-  border-radius: 5%;
+  background-color: rgb(29, 29, 29, 0.6);
+  color: white;
   padding: 10px;
   font-family: sans-serif;
   text-align: center;
 }
+
+#velkommen-text > p > a {
+  position: absolute;
+  left: 80px;
+  top: 150px;
+  color: white;
+  text-decoration: none;
+  background-color: rgb(204, 35, 35);
+  padding: 10px;
+}
+
+#velkommen-text > p > a:hover {
+  animation: slide 1.5s alternate;
+}
+
+@keyframes slide {
+  0% { left: 70px;
+       top: 150px;
+      }
+  100% { left: 80px;
+    top: 150px;
+  }
+}
+
+#velkommen-text > p > a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+
 
 #login div {
   display: grid;

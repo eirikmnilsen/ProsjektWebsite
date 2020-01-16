@@ -6,15 +6,17 @@
         <style>
         .heading {
             text-align: center;
-            font-size: 1.2em;
-            color:blue;
+            font-size: 1em;
+            color: black;
+            font-family: sans-serif;
+            padding: 5px;
         }
         form {
             position: relative;
+            top: 100px;
             width: 35em;
             max-width: 85%;
             padding: 5px;
-            border-radius: 5px;
             border: solid gray 1px;
             background-color: gainsboro;
             margin-top: 1em;
@@ -30,7 +32,8 @@
             grid-template-columns: 7fr 4fr;
             margin: 5px;
             padding: 5px;
-            border-radius: 5px;
+            font-family: sans-serif;
+            font-size: 0.9em;
             border: solid gray 1px;
             background-color: whitesmoke;
         }
@@ -45,8 +48,7 @@
         }
         
         form::after {
-            color:blue;
-            content: "Registrering";
+            color: black;
             position: absolute;
             right: 20px;
             top: -20px;
