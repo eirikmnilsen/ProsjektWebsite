@@ -39,7 +39,7 @@
               font-size: 1.2rem;
             } 
             td.false {
-              color:red;
+              color:blue;
             }
             td.number {
               text-align: right;
