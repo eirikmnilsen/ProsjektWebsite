@@ -71,3 +71,16 @@
           "view";
       }
     }
+
+
+  #kundebilde {
+    position: absolute;
+  width: 100vw;
+  height: 100vh;
+  margin-left: -8px;
+  margin-top: 8px;
+  background-image: url("../Bilder/kundebilde.jpeg");
+  background-position: center;
+  background-size: cover;
+  z-index: -1;
+  }
