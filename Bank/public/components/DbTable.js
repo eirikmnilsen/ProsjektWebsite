@@ -13,13 +13,17 @@
             }
             th {
               text-transform: capitalize;
+              background-color: rgb(170, 170, 170, 0.8);
             }
             td,th {
               border: solid gray 1px;
-              padding: 2px;
+              padding: 8px;
             }
             tr:nth-child(odd) {
-              background-color: var(--alternate, lightsteelblue);
+              background-color: rgb(245, 245, 245, 0.8);
+            }
+            tr:nth-child(even) {
+              background-color: rgb(245, 245, 245, 0.8);
             }
             caption {
               color:black;
