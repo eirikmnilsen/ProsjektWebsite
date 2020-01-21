@@ -13,12 +13,12 @@
         }
         form {
             position: relative;
-            top: 30px;
+            top: 25px;
             width: 35em;
             max-width: 85%;
             padding: 5px;
             border: solid gray 1px;
-            background-color: gainsboro;
+            background-color: rgb(170, 170, 170, 0.8);
             margin-top: 1em;
         }
 
