@@ -24,6 +24,18 @@
         <div id="logo"></div>
         <div id="admin">
 
+<<<<<<< HEAD
+           
+                <db-insert id="laan" 
+                     table="laan"
+                     fields="antall" foreign="kunde.kundeid:fornavn+etternavn"
+                     
+                     >
+                    <span slot="heading">Laan penger</span>
+                </db-insert>
+
+               
+=======
             <db-insert id="form" fields="udato:date,antall" table="laan">
                 <span slot="heading">Lån penger</span>
                 <db-user id="kundeid" field="kundeid" label="Kundenr"></db-user>
@@ -51,6 +63,7 @@
                 from linje l inner join vare v on (v.vareid = l.vareid)">
                     <div class="total">Totalsummen blir ${total} kr</div>
                 </db-list>
+>>>>>>> 9e46e8601e6315e9f645a6aede9d4d18f1918396
 
             </div>
 
