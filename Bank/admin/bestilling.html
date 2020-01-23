@@ -24,9 +24,12 @@
         <div id="logo"></div>
         <div id="admin">
 
+	    <div>Forutsetter at du er registrert som en kunde.
+	    Dersom du ikke er kunde vil kundenr lyse rødt, ta heller kontakt med
+	    en lånehai, av oss får du ikke penger!</div>
             <db-insert id="form" fields="udato:date,antall" table="laan">
                 <span slot="heading">Lån penger</span>
-                <db-user id="kundeid" field="kundeid:fornavn" label="Kundenr" sql="select kundeid from kunde"></db-user>
+                <db-user id="kundeid" field="kundeid" label="Kundenr"></db-user>
             </db-insert>
            
 
