@@ -317,7 +317,7 @@ async function safesql(user, res, obj) {
     let userinfo = userlist[user.id];
     if (userinfo.kundeid) {
       let good = [
-        `insert into laan (udato,kundeid) values ($[udato],$[kundeid])`,
+        `insert into laan (udato,kundeid,antall) values ($[udato],$[kundeid],$[antall])`,
         `insert into linje (antall,bestillingid,vareid) values ($[antall],$[bestillingid],$[vareid])`,
         `delete from linje where linjeid in`,
         `delete from bestilling where besti`,

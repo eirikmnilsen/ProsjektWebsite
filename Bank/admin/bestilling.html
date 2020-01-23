@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Registrer forfatter</title>
+    <title>Lån penger</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="/components/DbUser.js"></script>
     <script src="/components/DbInsert.js"></script>
@@ -20,25 +20,13 @@
     <home-bar heading="Kringeland Bank AS" getlinks="/htmlfiler/admin" username="/myself">
     </home-bar>
     
-    <h1 class=" centered">Mine laan</h1>
+    <h1 class="centered">Lån penger</h1>
         <div id="logo"></div>
         <div id="admin">
 
-<<<<<<< HEAD
-           
-                <db-insert id="laan" 
-                     table="laan"
-                     fields="antall" foreign="kunde.kundeid:fornavn+etternavn"
-                     
-                     >
-                    <span slot="heading">Laan penger</span>
-                </db-insert>
-
-               
-=======
             <db-insert id="form" fields="udato:date,antall" table="laan">
                 <span slot="heading">Lån penger</span>
-                <db-user id="kundeid" field="kundeid" label="Kundenr"></db-user>
+                <db-user id="kundeid" field="kundeid:fornavn" label="Kundenr" sql="select kundeid from kunde"></db-user>
             </db-insert>
            
 
@@ -48,22 +36,9 @@
                     <span slot="caption">Mine laan</span>
                 </db-table>
 
-                <db-table connected="laan:laanid" fields="linjeid:hidden,navn,antall:int,pris:money"
-                    update="linje" delete="linje"
-                    sql="select l.*,v.navn,v.pris from linje l inner join vare v on (v.vareid = l.vareid)">
-                    <span slot="caption">Varelinje</span>
-                </db-table>
-
-                <db-table id="total" connected="laan:laanid" fields="total:money" update="linje" sql="select sum(l.antall * v.pris) as total
-                                from linje l inner join vare v on (v.vareid = l.vareid)">
-                    <span slot="caption">Totalsum</span>
-                </db-table>
-
-                <db-list cssimport="/css/admin.css" sql="select sum(l.antall * v.pris) as total
-                from linje l inner join vare v on (v.vareid = l.vareid)">
+                <db-list cssimport="/css/admin.css" sql="select antall from laan">
                     <div class="total">Totalsummen blir ${total} kr</div>
                 </db-list>
->>>>>>> 9e46e8601e6315e9f645a6aede9d4d18f1918396
 
             </div>
 
