@@ -241,8 +241,11 @@ app.post("/userinfo", function(req, res) {
 });
 
 async function getuinf(sql, res) {
-  let userinfo = await db.one(sql);
-  res.send(userinfo);
+  const list = await db.one(sql).catch(err => {
+    console.log(err);
+    return { error:err.message};
+  })
+  res.send(list);
 }
 
 async function saferSQL(res, obj, options) {
@@ -340,18 +343,21 @@ async function safesql(user, res, obj) {
   unsafe = unsafe || lowsql.includes("alter");
   unsafe = unsafe || lowsql.includes("drop");
   if (unsafe && !personal) {
-    results = {};
+    results = { error: `This sql not allowed for ${user.username}` };
+    console.log("SQL:",sql," DENIED for ",user.username);
+    res.send({ results });
   } else
     await db
       .any(sql, data)
       .then(data => {
         results = data;
+        res.send({ results });
       })
       .catch(error => {
         console.log("ERROR:", sql, ":", error.message); // print error;
         results = { error: error.message };
+        res.send({ results });
       });
-  res.send({ results });
 }
 
 // allow admin to do anything
