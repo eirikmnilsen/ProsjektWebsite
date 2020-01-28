@@ -1,0 +1,13 @@
+body {
+    background-color: rgb(109, 168, 109);
+}
+
+h1 {
+    color: black;
+}
+
+#deltakere {
+    width: 90vw;
+    height: 20vh;
+    background-color: antiquewhite;
+}
