@@ -1,13 +1,159 @@
 body {
+    position: absolute;
     background-color: rgb(109, 168, 109);
+    width: 100vw;
+    height: 1500px;
+    font-family: sans-serif;
 }
 
 h1 {
     color: black;
+    text-align: center;
 }
 
 #deltakere {
     width: 90vw;
     height: 20vh;
     background-color: antiquewhite;
+    position: absolute;
+    left: 50px;
+    box-shadow: 5px 5px 5px black;
 }
+
+h2 {
+    position: relative;
+    text-align: center;
+}
+
+li {
+    position: relative;
+    left: 60px;
+}
+
+#hensikt {
+    top: 300px;
+    width: 90vw;
+    height: 20vh;
+    background-color: antiquewhite;
+    position: absolute;
+    left: 50px;
+    box-shadow: 5px 5px 5px black;
+    list-style-type: none;
+}
+
+#oversikt {
+    top: 550px;
+    width: 90vw;
+    height: 50vh;
+    background-color: antiquewhite;
+    position: absolute;
+    left: 50px;
+    box-shadow: 5px 5px 5px black;
+    
+}
+
+#oversikt1 {
+    position: relative;
+    left: 50px;
+    display: grid;
+    grid-template-areas: 
+    ". a ."
+    "b c d"
+    "e f g";
+    
+}
+
+.oversikta {
+    grid-area: a;
+    position: relative;
+    width: 100px;
+    height: 70px;
+    border: solid black 1px;
+    text-align: center;
+    border-radius: 10%;
+    background-color: rgb(224, 203, 174)
+}
+
+.oversiktb {
+    grid-area: b;
+    position: relative;
+    width: 100px;
+    height: 70px;
+    border: solid black 1px;
+    text-align: center;
+    border-radius: 10%;
+    background-color: rgb(224, 203, 174)
+}
+
+.oversiktc {
+    grid-area: c;
+    position: relative;
+    width: 100px;
+    height: 70px;
+    border: solid black 1px;
+    text-align: center;
+    border-radius: 10%;
+    background-color: rgb(224, 203, 174)
+}
+
+.oversiktd {
+    grid-area: d;
+    position: relative;
+    width: 100px;
+    height: 70px;
+    border: solid black 1px;
+    text-align: center;
+    border-radius: 10%;
+    background-color: rgb(224, 203, 174)
+}
+
+.oversikte {
+    grid-area: e;
+    position: relative;
+    width: 100px;
+    height: 70px;
+    border: solid black 1px;
+    text-align: center;
+    border-radius: 10%;
+    background-color: rgb(224, 203, 174)
+}
+
+.oversiktf {
+    grid-area: f;
+    position: relative;
+    width: 100px;
+    height: 70px;
+    border: solid black 1px;
+    text-align: center;
+    border-radius: 10%;
+    background-color: rgb(224, 203, 174)
+}
+
+.oversiktg {
+    grid-area: g;
+    position: relative;
+    width: 100px;
+    height: 70px;
+    border: solid black 1px;
+    text-align: center;
+    border-radius: 10%;
+    background-color: rgb(224, 203, 174)
+}
+
+#dbdiagram {
+    top: 1000px;
+    width: 90vw;
+    height: 60vh;
+    background-color: antiquewhite;
+    position: absolute;
+    left: 50px;
+    box-shadow: 5px 5px 5px black;
+    list-style-type: none;
+}
+
+iframe {
+    position: absolute;
+    top: 100px;
+    left: 350px;
+}
+
