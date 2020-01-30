@@ -13,6 +13,18 @@ h1 {
     top: 20px;
 }
 
+#logo {
+  position: relative;
+  width: 75px;
+  height: 75px;
+  top: -56px;
+  left: 980px;
+  background-image: url("/public/Bilder/KBAS-LOGO.png");
+  background-size: cover;
+  background-position: center;
+  z-index: 5;
+}
+
 #deltakere {
     width: 70vw;
     height: 20vh;
