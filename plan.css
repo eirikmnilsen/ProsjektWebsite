@@ -1,0 +1,158 @@
+#bakrunn {
+    background-color: rgb(187, 131, 27);
+    border: solid black;
+    height: 220%;
+    width: 100%;
+    position: absolute;
+}
+
+#deltakere {
+    background-color: white;
+    border: solid black;
+    top: 10%;
+    height: 20%;
+    width: 80%;
+    right: 40%;
+    left: 10%;
+    position: absolute;
+    text-align: center;
+
+}
+
+#hensikt {
+    background-color: white;
+    border: solid black;
+    top: 40%;
+    height: 20%;
+    width: 80%;
+    right: 10%;
+    left: 10%;
+    position: absolute;
+    text-align: center;
+}
+
+#oversikt {
+    background-color: white;
+    border: solid black;
+    top: 70%;
+    height: 50%;
+    width: 80%;
+    right: 40%;
+    left: 10%;
+    position: absolute;
+    text-align: center;
+    display: grid;
+    grid-template-areas: 
+    ". a ."
+    "b c d"
+    "e f g";
+
+}
+
+.a {
+    grid-area: a;
+    position: relative;
+    width: 100px;
+    height: 70px;
+    border: solid black 1px;
+    text-align: center;
+    border-radius: 10%;
+    background-color: grey;
+    margin: 5px;
+    
+}
+
+.b {
+    grid-area: b;
+    position: relative;
+    width: 100px;
+    height: 70px;
+    border: solid black 1px;
+    text-align: center;
+    border-radius: 10%;
+    background-color: grey;
+    margin: 5px;
+}
+
+.c {
+    grid-area: c;
+    position: relative;
+    width: 100px;
+    height: 70px;
+    border: solid black 1px;
+    text-align: center;
+    border-radius: 10%;
+    background-color: grey;
+    margin: 5px;
+}
+
+.d {
+    grid-area: d;
+    position: relative;
+    width: 100px;
+    height: 70px;
+    border: solid black 1px;
+    text-align: center;
+    border-radius: 10%;
+    background-color: grey;
+    margin: 5px;
+}
+
+.e {
+    grid-area: e;
+    position: relative;
+    width: 100px;
+    height: 70px;
+    border: solid black 1px;
+    text-align: center;
+    border-radius: 10%;
+    background-color: grey;
+    margin: 5px;
+}
+
+.f {
+    grid-area: f;
+    position: relative;
+    width: 100px;
+    height: 70px;
+    border: solid black 1px;
+    text-align: center;
+    border-radius: 10%;
+    background-color: grey;
+    margin: 5px;
+}
+.g {
+    grid-area: g;
+    position: relative;
+    width: 100px;
+    height: 70px;
+    border: solid black 1px;
+    text-align: center;
+    border-radius: 10%;
+    background-color: grey;
+    margin: 5px;
+ }
+
+
+#database-diagram {
+    background-color: white;
+    border: solid black;
+    height: 70%;
+    width: 80%;
+    right: 40%;
+    left: 10%;
+    top: 130%;
+    position: absolute;
+    text-align: center;
+
+}
+
+#div.a {
+    color: blue;
+
+}
+
+
+h3 {
+    text-align: center;
+}
