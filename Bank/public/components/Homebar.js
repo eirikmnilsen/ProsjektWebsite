@@ -72,7 +72,7 @@ class HomeBar extends HTMLElement {
             div#menu slot:hover,
             div#menu ul li:hover,
             div#info > ul > li:hover {
-              background: rgb(32,166,231);
+              background: gray;
             }
 
             div#info li, div#menu li {
