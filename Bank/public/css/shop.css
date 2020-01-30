@@ -66,7 +66,6 @@ db-table {
   top: 100px;
   text-align: center;
   font-family: sans-serif;
-
 }
 
 #wallpaper {
@@ -95,11 +94,11 @@ db-table {
 
 
 #logo {
-  position: absolute;
+  position: relative;
   width: 75px;
   height: 75px;
-  top: 100px;
-  right: 350px;
+  top: 40px;
+  left: 1000px;
   background-image: url("../Bilder/KBAS-LOGO.png");
   background-size: cover;
   background-position: center;
